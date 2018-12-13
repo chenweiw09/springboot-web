@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,16 +21,23 @@ import java.io.OutputStream;
  */
 @Slf4j
 @Controller
+@RequestMapping("/resume")
 public class ResumeController {
 
 
     @GetMapping("/liuchang")
-    public String getPage(HttpServletRequest request, HttpServletResponse response){
-        return  "resume";
+    public String indexPage(HttpServletRequest request, HttpServletResponse response){
+        return  "liuchang";
     }
 
 
-    @GetMapping("/resume/preview")
+    @GetMapping("/liuchang/myresume")
+    public String resumePage(){
+        return "resume";
+    }
+
+
+    @GetMapping("/preview")
     public void getResume(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String dir = request.getServletContext().getRealPath("/")+"upload"+File.separator;

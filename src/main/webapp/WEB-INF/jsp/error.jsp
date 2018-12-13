@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="The free Poses-404 Iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="<%=request.getContextPath() %>/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<%=request.getContextPath() %>/static/css/error_style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 <div class="wrap">

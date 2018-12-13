@@ -20,24 +20,9 @@
         // window.opener=null;//出掉关闭时候的提示窗口
         // window.open('','_self'); //ie7
         // window.close();
-        window.location.href="../../app/plugins/web/viewer.html?file=/app/resume/preview"
+        window.location.href="<%=request.getContextPath()%>/plugins/web/viewer.html?file=<%=request.getContextPath()%>/resume/preview"
 
     </script>
-
-    <script>
-        // $(function () {
-        //     var newWindow=window.open()
-        //     $.ajax({
-        //         url:"../../app/plugins/web/viewer.html?file=/app/resume/preview",
-        //
-        //         success:function (url) {
-        //             newWindow.location.href=url
-        //         }
-        //     })
-        // })
-
-    </script>
-
 </div>
 
 </body>

@@ -1,26 +1,37 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: chenwei
-  Date: 2018/12/12
-  Time: 15:48
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
+﻿<!doctype html>
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/static/css/login.css"/>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="/static/css/login_styles.css">
 </head>
 <body>
-<div id="login">
-    <h1>Login</h1>
-    <form method="post" action="<%=request.getContextPath() %>/login">
-        <input type="text" required="required" placeholder="用户名" name="userName"></input>
-        <input type="password" required="required" placeholder="密码" name="password"></input>
-        <button class="button" type="submit">登录</button>
-    </form>
+
+<div class="htmleaf-container">
+		<div class="wrapper">
+			<div class="container">
+				<h1>Welcome</h1>
+
+				<form class="form" action="<%=request.getContextPath() %>/login" method="post">
+					<input type="text" placeholder="userName" name="userName">
+					<input type="password" placeholder="password" name="password">
+					<button type="submit" id="login-button" class="button">Login</button>
+				</form>
+			</div>
+		</div>
+
 </div>
+
+<%--<script src="/static/js/jquery-2.1.1.min.js" type="text/javascript"></script>--%>
+<script>
+// $('#login-button').click(function (event) {
+// 	event.preventDefault();
+// 	$('form').fadeOut(500);
+// 	$('.wrapper').addClass('form-success');
+// });
+</script>
+
 </body>
 </html>

@@ -22,7 +22,7 @@ import java.io.IOException;
  */
 @Slf4j
 @Controller
-public class IndexController {
+public class LoginController {
 
     @Autowired
     private UserService userService;
@@ -30,11 +30,6 @@ public class IndexController {
     private static final String USER_NAME = "userName";
     private static final String USER_ID = "userId";
 
-
-    @GetMapping("/index")
-    public String index(){
-        return "index";
-    }
 
     @GetMapping("login")
     public String login(){
@@ -49,11 +44,16 @@ public class IndexController {
 
         if(!user.getPassword().equals(password)){
             log.error("error user password");
-            response.sendRedirect("/app/login");
+            response.sendRedirect(request.getContextPath()+"/login");
         }
 
         request.getSession().setAttribute(USER_NAME,user.getUserName());
         request.getSession().setAttribute(USER_ID,user.getUserId());
-        response.sendRedirect("/app/index");
+        response.sendRedirect(request.getContextPath()+"/upload");
+    }
+
+    @GetMapping("/upload")
+    public String index(){
+        return "upload";
     }
 }

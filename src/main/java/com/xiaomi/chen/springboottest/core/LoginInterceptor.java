@@ -20,7 +20,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         Object userName = request.getSession().getAttribute(USER_NAME);
         Object userId = request.getSession().getAttribute(USER_ID);
         if(userName == null || userId==null){
-            response.sendRedirect("/app/login");
+            response.sendRedirect(request.getContextPath()+"/login");
         }
         return true;
     }
