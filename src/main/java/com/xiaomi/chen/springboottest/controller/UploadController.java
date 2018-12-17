@@ -1,5 +1,6 @@
 package com.xiaomi.chen.springboottest.controller;
 
+import com.xiaomi.chen.springboottest.domain.Constants;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,7 +21,7 @@ public class UploadController {
     @PostMapping("/upload")
     public String upload(HttpServletRequest request, MultipartFile file){
 
-        String dir = request.getServletContext().getRealPath("/")+"upload/";
+        String dir = Constants.fileDir+"upload/";
 
         try {
             File dirFile = new File(dir);

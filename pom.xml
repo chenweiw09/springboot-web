@@ -6,7 +6,7 @@
     <groupId>com.xiaomi.chen</groupId>
     <artifactId>springboot-web</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>springboot-web</name>
     <description>Demo project for Spring Boot</description>
@@ -19,6 +19,7 @@
     </parent>
 
     <properties>
+        <start-class>com.xiaomi.chen.springboottest.Application</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -314,17 +315,22 @@
     <build>
         <!-- build所需要的资源 -->
         <resources>
+
             <resource>
                 <directory>${project.basedir}/src/main/resources</directory>
-                <filtering>true</filtering>
-                <excludes>
-                    <exclude>staging/*</exclude>
-                    <exclude>dev/*</exclude>
-                    <!-- <exclude>log4j.xml</exclude>-->
-                    <exclude>web.xml</exclude>
-                </excludes>
+                <includes>
+                    <include>**/**</include>
+                </includes>
             </resource>
 
+            <resource>
+                <directory>${project.basedir}/src/main/webapp</directory>
+                <filtering>true</filtering>
+                <targetPath>META-INF/resources/</targetPath>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
         </resources>
 
         <plugins>
@@ -392,6 +398,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

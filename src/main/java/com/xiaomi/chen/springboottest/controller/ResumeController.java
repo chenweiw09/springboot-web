@@ -1,7 +1,9 @@
 package com.xiaomi.chen.springboottest.controller;
 
+import com.xiaomi.chen.springboottest.domain.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,12 +42,9 @@ public class ResumeController {
     @GetMapping("/preview")
     public void getResume(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String dir = request.getServletContext().getRealPath("/")+"upload"+File.separator;
-        String path = dir+"liuchang.pdf";
+        String path = "/"+Constants.fileDir+"upload"+File.separator+"liuchang.pdf";
 
         response.setHeader("Access-Control-Allow-Origin", "*");
-//        response.setHeader("Content-Disposition", "attachment;fileName="+ URLEncoder.encode("liuchang", "UTF-8")+".pdf");
-//        response.setContentType("multipart/form-data");
         OutputStream outputStream = response.getOutputStream();
         getFileOutputStream(path,outputStream);
 
@@ -53,7 +52,7 @@ public class ResumeController {
 
 
     private void getFileOutputStream(String path, OutputStream outputStream){
-
+        log.info("开始打印文件的地址|path:"+path);
         File pdfFile = new File(path);
         if(pdfFile.exists()){
             try {
