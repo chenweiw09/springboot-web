@@ -63,7 +63,7 @@
       <div class="container">
         <div class="row mb-5 align-items-center">
           <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
-            <img src="/static/images/image_1_long.jpg" alt="Image placeholder" class="img-fluid">
+            <img src="/static/images/me_backup.jpg" alt="Image placeholder" class="img-fluid">
           </div>
           <div class="col-lg-5 pl-lg-5">
             <div class="section-heading">
@@ -175,14 +175,14 @@
 
             <div class="resume-item mb-4">
               <span class="date"><span class="icon-calendar"></span> March 2013 - Present</span>
-              <h3>Lead Product Designer</h3>
+              <h3>自然基金项目骨干</h3>
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               <span class="school">xxx</span>
             </div>
 
             <div class="resume-item mb-4">
               <span class="date"><span class="icon-calendar"></span> March 2013 - Present</span>
-              <h3>Lead Product Designer</h3>
+              <h3>国家重大科研项目骨干</h3>
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               <span class="school">Facebook</span>
             </div>
@@ -193,14 +193,6 @@
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
               <span class="school">Twitter</span>
             </div>
-
-            <div class="resume-item mb-4">
-              <span class="date"><span class="icon-calendar"></span> March 2013 - Present</span>
-              <h3>Lead Product Designer</h3>
-              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              <span class="school">Shopify</span>
-            </div>
-
 
           </div>
         </div>
@@ -217,19 +209,19 @@
           </div>
           
           <div class="col-md-7 mb-5 mb-md-0">
-            <form action="" class="site-form">
+            <form action="<%=request.getContextPath() %>/resume/contact" class="site-form" method="post">
               <h3 class="mb-5">保持联系</h3>
               <div class="form-group">
-                <input type="text" class="form-control px-3 py-4" placeholder="Your Name">
+                <input type="text" class="form-control px-3 py-4" placeholder="Your Name" name="name">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control px-3 py-4" placeholder="Your Email">
+                <input type="email" class="form-control px-3 py-4" placeholder="Your Email" name="email">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control px-3 py-4" placeholder="Your Phone">
+                <input type="text" class="form-control px-3 py-4" placeholder="Your Phone" name="phone">
               </div>
               <div class="form-group mb-5">
-                <textarea class="form-control px-3 py-4"cols="30" rows="10" placeholder="Write a Message"></textarea>
+                <textarea class="form-control px-3 py-4"cols="30" rows="10" placeholder="Write a Message" name="message"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" class="btn btn-primary  px-4 py-3" value="Send Message">
@@ -241,15 +233,15 @@
             <ul class="site-contact-details">
               <li>
                 <span class="text-uppercase">邮箱</span>
-                site@gmail.com
+                iamme06290@163.com
               </li>
               <li>
                 <span class="text-uppercase">电话</span>
-                +30 976 1382 9921
+                +86 188 1132 4257
               </li>
               <li>
                 <span class="text-uppercase">微信</span>
-                +30 976 1382 9922
+                +xxx
               </li>
               <li>
                 <span class="text-uppercase">联系地址</span>
@@ -280,7 +272,7 @@
         <div class="row">
             <p class="col-12 text-center">
             
-            Copyright &copy; <script>document.write(new Date().getFullYear());</script> - Colorlib All rights reserved | More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+            Copyright &copy; <script>document.write(new Date().getFullYear());</script> - from 模板之家网页模板
             
             </p>
         </div>

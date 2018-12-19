@@ -12,7 +12,7 @@ import javax.annotation.Resource
 @Configuration
 open class MvcConfigurer(@Resource private val snakeToCamelArgumentResolver: SnakeToCamelArgumentResolver,
                          @Resource private val loginInterceptor: LoginInterceptor
-        ): WebMvcConfigurerAdapter() {
+            ): WebMvcConfigurerAdapter() {
 
     @Resource
     private val mappingJackson2HttpMessageConverter: MappingJackson2HttpMessageConverter? = null
@@ -49,9 +49,7 @@ open class MvcConfigurer(@Resource private val snakeToCamelArgumentResolver: Sna
     }
 
     override fun addArgumentResolvers(argumentResolvers: MutableList<HandlerMethodArgumentResolver>) {
-        argumentResolvers?.let {
-            it.add(snakeToCamelArgumentResolver)
-        }
+        argumentResolvers.add(snakeToCamelArgumentResolver)
         super.addArgumentResolvers(argumentResolvers)
     }
 

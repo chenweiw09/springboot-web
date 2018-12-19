@@ -1,19 +1,25 @@
 package com.xiaomi.chen.springboottest.controller;
 
 import com.xiaomi.chen.springboottest.domain.Constants;
+import com.xiaomi.chen.springboottest.domain.Contact;
+import com.xiaomi.chen.springboottest.service.ContactService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Date;
 
 /**
  * @author chenwei
@@ -26,6 +32,8 @@ import java.io.OutputStream;
 @RequestMapping("/resume")
 public class ResumeController {
 
+    @Resource
+    private ContactService contactService;
 
     @GetMapping("/liuchang")
     public String indexPage(HttpServletRequest request, HttpServletResponse response){
@@ -48,6 +56,25 @@ public class ResumeController {
         OutputStream outputStream = response.getOutputStream();
         getFileOutputStream(path,outputStream);
 
+    }
+
+
+    @PostMapping("/contact")
+    public String contactMe(@RequestParam String name,
+                            @RequestParam String email,
+                            @RequestParam(required = false) String phone,
+                            @RequestParam(required = false) String message){
+
+        Contact contact = new Contact();
+        contact.setName(name);
+        contact.setEmail(email);
+        contact.setPhone(phone);
+        contact.setMessage(message);
+        contact.setCreateTime(new Date());
+        contact.setDealStatus(1);
+        contactService.saveContact(contact);
+
+        return "liuchang";
     }
 
 
