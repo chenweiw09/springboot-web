@@ -2,6 +2,7 @@ package com.xiaomi.chen.springboottest.controller;
 
 import com.xiaomi.chen.springboottest.domain.User;
 import com.xiaomi.chen.springboottest.service.UserService;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ import java.io.IOException;
  */
 @Slf4j
 @Controller
+@Api(value = "登录")
 public class LoginController {
 
     @Autowired
